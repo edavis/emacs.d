@@ -12,7 +12,6 @@
       confirm-kill-emacs 'yes-or-no-p)
 
 (setq-default truncate-lines t
-	      python-indent-offset 4
 	      show-trailing-whitespace t)
 
 ;; Custom frame title
