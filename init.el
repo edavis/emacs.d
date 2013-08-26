@@ -79,6 +79,11 @@
 (add-hook 'after-save-hook
 	  'executable-make-buffer-file-executable-if-script-p)
 
+; Extra modes --------------------------------------------------------
+
+;; Installed from Homebrew
+(require 'magit)
+
 ; Keybindings --------------------------------------------------------
 
 (global-set-key (kbd "\C-x SPC") 'just-one-space)
@@ -86,6 +91,7 @@
 (global-set-key (kbd "M--") 'text-scale-decrease)
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "\C-c \C-x r") 'replace-string)
+(global-set-key (kbd "\C-x m") 'magit-status)
 
 ; Custom -------------------------------------------------------------
 
