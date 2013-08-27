@@ -79,10 +79,13 @@
 (add-hook 'after-save-hook
 	  'executable-make-buffer-file-executable-if-script-p)
 
-; Extra modes --------------------------------------------------------
+; Packages -----------------------------------------------------------
 
 ;; Installed from Homebrew
 (require 'magit)
+
+(require 'ido)
+(ido-mode 1)
 
 ; Keybindings --------------------------------------------------------
 
