@@ -81,11 +81,16 @@
 
 ; Packages -----------------------------------------------------------
 
+(add-to-list 'load-path "~/.emacs.d/lib/")
+
 ;; Installed from Homebrew
 (require 'magit)
 
 (require 'ido)
 (ido-mode 1)
+
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 ; Keybindings --------------------------------------------------------
 
