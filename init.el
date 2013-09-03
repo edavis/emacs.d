@@ -56,7 +56,8 @@
 ;; Set font
 (cond ((string= system-name "Erics-MacBook-Pro.local")
        (set-frame-font "Source Code Pro 12" :frames t))
-      (t (set-frame-font "Source Code Pro 16" :frames t)))
+      (t
+       (set-frame-font "Source Code Pro 13" :frames t)))
 
 ;; Resize the frame once everything is loaded
 (add-hook 'emacs-startup-hook
@@ -81,6 +82,8 @@
 
 ; Packages -----------------------------------------------------------
 
+(add-to-list 'load-path "~/.emacs.d/lib/")
+
 ;; Installed from Homebrew
 (require 'magit)
 
@@ -89,6 +92,9 @@
 
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 ; Keybindings --------------------------------------------------------
 
