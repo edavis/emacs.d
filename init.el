@@ -87,6 +87,9 @@
 (require 'ido)
 (ido-mode 1)
 
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+
 ; Keybindings --------------------------------------------------------
 
 (global-set-key (kbd "\C-x SPC") 'just-one-space)
