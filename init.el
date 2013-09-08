@@ -64,6 +64,8 @@
 	  '(lambda ()
 	     (set-frame-size (selected-frame) 80 35)))
 
+(add-hook 'magit-log-edit-mode-hook 'auto-fill-mode)
+
 ;; https://github.com/sellout/emacs-color-theme-solarized
 (add-to-list 'custom-theme-load-path "~/.emacs.d/solarized/")
 (load-theme 'solarized-dark t)
