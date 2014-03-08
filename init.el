@@ -58,7 +58,7 @@
 
 ;; Set font
 (cond ((string= system-name "Erics-MacBook-Pro.local")
-       (set-frame-font "Source Code Pro 12" :frames t))
+       (set-frame-font "Source Code Pro 10" :frames t))
       (t
        (set-frame-font "Source Code Pro 13" :frames t)))
 
