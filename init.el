@@ -80,6 +80,21 @@
   (delete-file buffer-file-name)
   (kill-buffer (buffer-name)))
 
+(defun timestamp ()
+  (interactive)
+  (insert
+   (format "- %s: " (format-time-string "%I:%M %p"))))
+
+(defun xmllint ()
+  "Run xmllint --format on a buffer."
+  (interactive)
+  (nxml-mode)
+  (shell-command-on-region (point-min) (point-max) "xmllint --format -" nil t))
+
+(defun rfc822 ()
+  "Return the current time formatted according to RFC 822."
+  (format "%s GMT" (format-time-string "%a, %d %b %Y %H:%M:%S" (current-time) t)))
+
 ; Hooks --------------------------------------------------------------
 
 (add-hook 'after-save-hook
