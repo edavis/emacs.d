@@ -104,6 +104,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/lib/")
 (add-to-list 'load-path "~/.emacs.d/lib/org-8.2.5h/lisp/")
+(add-to-list 'load-path "~/src/org-opml")
 
 ;; Org Mode
 (setq org-directory "~/Dropbox/Org"
