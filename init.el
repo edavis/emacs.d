@@ -103,6 +103,39 @@
 ; Packages -----------------------------------------------------------
 
 (add-to-list 'load-path "~/.emacs.d/lib/")
+(add-to-list 'load-path "~/.emacs.d/lib/org-8.2.5h/lisp/")
+
+;; Org Mode
+(setq org-directory "~/Dropbox/Org"
+      org-default-notes-file (concat org-directory "/notes.org")
+      org-blank-before-new-entry '((heading . auto) (plain-list-item . nil)))
+
+(define-key global-map "\C-cc" 'org-capture)
+
+(setq org-capture-templates
+      `(("t" "TODO" item (file ,(concat org-directory "/queue.org"))
+	 "- %?\n  (Created: %<%D %r>)" :empty-lines 1)
+	("w" "Add worknote" item (file+datetree ,(concat org-directory "/worknotes.org"))
+	 "- %<%I:%M %p>: %?" :empty-lines 1)))
+
+(defun rss-node (url)
+  (interactive "MURL: ")
+  (insert url)
+  (let ((headline (org-element-at-point)))
+    (unless (org-get-property-block)
+      (org-insert-property-drawer)
+      (org-set-property "created" (rfc822))
+      (org-set-property "type" "rss")
+      (org-set-property "xmlUrl" url))))
+
+(defun org-sync-org-and-opml ()
+  "Post-save hook that generates an OPML file from an Org file
+  when in the Org major mode and the buffer-local variable
+  `opml-sync' is non-nil."
+  (when (and (eq major-mode 'org-mode) opml-sync)
+    (org-opml-export-to-opml)))
+
+(add-hook 'after-save-hook 'org-sync-org-and-opml)
 
 ;; Installed from Homebrew
 (require 'magit)
