@@ -98,6 +98,11 @@
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html$" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css$" . web-mode))
+(setq web-mode-engines-alist '(("django" . "\.html")))
+
 ; Keybindings --------------------------------------------------------
 
 (global-set-key (kbd "\C-x SPC") 'just-one-space)
