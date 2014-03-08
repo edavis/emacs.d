@@ -162,6 +162,7 @@
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "\C-c \C-x r") 'replace-string)
 (global-set-key (kbd "\C-x m") 'magit-status)
+(global-set-key "\C-\M-e" 'eval-defun)
 
 ; Custom -------------------------------------------------------------
 
