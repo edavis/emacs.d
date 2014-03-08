@@ -18,13 +18,12 @@
 	      show-trailing-whitespace t)
 
 ;; Custom frame title
-(setq frame-title-format (list
-			  '(:eval
-			    (if buffer-file-name
-				(replace-regexp-in-string
-				 (getenv "HOME") "~" buffer-file-name)
-			      (concat "Buffer: " (buffer-name))))
-			  (format " - GNU Emacs %d.%d" emacs-major-version emacs-minor-version)))
+(setq frame-title-format '(:eval
+			   (if buffer-file-name
+			       (replace-regexp-in-string
+				(getenv "HOME") "~" buffer-file-name)
+			     (concat "Buffer: " (buffer-name)))
+			   (format " - GNU Emacs %d.%d" emacs-major-version emacs-minor-version)))
 
 ; Commands -----------------------------------------------------------
 
