@@ -15,7 +15,8 @@
       confirm-kill-emacs 'yes-or-no-p)
 
 (setq-default truncate-lines t
-	      show-trailing-whitespace t)
+	      show-trailing-whitespace t
+	      opml-sync nil)
 
 ;; Custom frame title
 (setq frame-title-format '(:eval
