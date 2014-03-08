@@ -9,6 +9,8 @@
       mac-allow-anti-aliasing t
       python-indent-offset 4
       python-indent-guess-indent-offset nil
+      user-full-name "Eric Davis"
+      user-mail-address "eric@davising.com"
       confirm-kill-emacs 'yes-or-no-p)
 
 (setq-default truncate-lines t
