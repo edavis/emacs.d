@@ -140,6 +140,27 @@ With no prefix argument, return the string."
       (org-set-property "type" "rss")
       (org-set-property "xmlUrl" url))))
 
+(defun camel-case (string)
+  "Transform STRING into camelCase."
+  (let ((split (split-string string " ")))
+    (replace-regexp-in-string "[^A-Za-z0-9_-]" ""
+			      (concat
+			       (downcase (car split))
+			       (mapconcat #'capitalize (cdr split) "")))))
+
+(defun new-post (title)
+  "Insert the boilerplate of a new blog post."
+  (interactive "sTitle? ")
+  (insert title)
+  (unless (org-get-property-block)
+    (org-insert-property-drawer)
+    (org-set-property "created" (rfc822))
+    (org-set-property "type" "outline")
+    (org-set-property "name" (camel-case title))
+    (org-set-property "path" (format "%s/%s.html"
+				     (format-time-string "%Y/%m/%d")
+				     (camel-case title)))))
+
 (defun org-sync-org-and-opml ()
   "Post-save hook that generates an OPML file from an Org file
   when in the Org major mode and the buffer-local variable
