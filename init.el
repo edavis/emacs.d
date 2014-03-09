@@ -129,9 +129,9 @@ With no prefix argument, return the string."
 	("w" "Add worknote" item (file+datetree ,(concat org-directory "/worknotes.org"))
 	 "- %<%I:%M %p>: %?" :empty-lines 1)))
 
-(defun rss-node (url)
-  (interactive "MURL: ")
-  (insert url)
+(defun rss-node (url title)
+  (interactive "sURL: \nsTitle: ")
+  (insert title)
   (let ((headline (org-element-at-point)))
     (unless (org-get-property-block)
       (org-insert-property-drawer)
