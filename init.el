@@ -91,9 +91,17 @@
   (nxml-mode)
   (shell-command-on-region (point-min) (point-max) "xmllint --format -" nil t))
 
-(defun rfc822 ()
-  "Return the current time formatted according to RFC 822."
-  (format "%s GMT" (format-time-string "%a, %d %b %Y %H:%M:%S" (current-time) t)))
+(defun rfc822 (&optional arg)
+  "Return the current time formatted according to RFC 822.
+
+When called with the prefix argument, insert at point in buffer.
+
+With no prefix argument, return the string."
+  (interactive "P")
+  (let ((timestamp (format "%s GMT" (format-time-string "%a, %d %b %Y %H:%M:%S" (current-time) t))))
+    (if arg
+	(insert timestamp)
+      timestamp)))
 
 ; Hooks --------------------------------------------------------------
 
