@@ -103,6 +103,11 @@ With no prefix argument, return the string."
 	(insert timestamp)
       timestamp)))
 
+(defun pwgen ()
+  (interactive)
+  (let ((pw (shell-command-to-string "/usr/local/bin/pwgen 16 1")))
+    (insert (replace-regexp-in-string "\n" "" pw))))
+
 ; Hooks --------------------------------------------------------------
 
 (add-hook 'after-save-hook
