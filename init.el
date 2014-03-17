@@ -60,7 +60,7 @@
 (cond ((string= system-name "Erics-MacBook-Pro.local")
        (set-frame-font "Source Code Pro 10" :frames t))
       (t
-       (set-frame-font "Source Code Pro 13" :frames t)))
+       (set-frame-font "Source Code Pro 11" :frames t)))
 
 ;; Resize the frame once everything is loaded
 (add-hook 'emacs-startup-hook
