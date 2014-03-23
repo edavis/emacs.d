@@ -187,6 +187,8 @@ With no prefix argument, return the string."
 (add-to-list 'auto-mode-alist '("\\.css$" . web-mode))
 (setq web-mode-engines-alist '(("django" . "\.html")))
 
+(require 'markdown-mode)
+
 ; Keybindings --------------------------------------------------------
 
 (global-set-key (kbd "\C-x SPC") 'just-one-space)
