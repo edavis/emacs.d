@@ -118,8 +118,7 @@ With no prefix argument, return the string."
 (add-to-list 'load-path "~/.emacs.d/lib/")
 (add-to-list 'load-path "~/.emacs.d/lib/org-8.2.5h/lisp/")
 
-(add-to-list 'load-path "~/src/org-opml")
-(load-library "ox-opml")
+(load-library "org-opml")
 
 ;; Org Mode
 (setq org-directory "~/Dropbox/Org"
@@ -165,15 +164,6 @@ With no prefix argument, return the string."
     (org-set-property "path" (format "%s/%s.html"
 				     (format-time-string "%Y/%m/%d")
 				     (camel-case title)))))
-
-(defun org-sync-org-and-opml ()
-  "Post-save hook that generates an OPML file from an Org file
-  when in the Org major mode and the buffer-local variable
-  `opml-sync' is non-nil."
-  (when (and (eq major-mode 'org-mode) opml-sync)
-    (org-opml-export-to-opml)))
-
-(add-hook 'after-save-hook 'org-sync-org-and-opml)
 
 ;; Installed from Homebrew
 (require 'magit)
