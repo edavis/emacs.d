@@ -128,6 +128,11 @@ With no prefix argument, return the string."
 
 (define-key global-map "\C-cc" 'org-capture)
 
+(defun hide-trailing-whitespace-in-org-mode ()
+  (setq show-trailing-whitespace nil))
+
+(add-hook 'org-mode-hook 'hide-trailing-whitespace-in-org-mode)
+
 (setq org-capture-templates
       `(("t" "TODO" item (file ,(concat org-directory "/queue.org"))
 	 "- %?\n  (Created: %<%D %r>)" :empty-lines 1)
