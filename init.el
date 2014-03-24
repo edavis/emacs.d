@@ -188,6 +188,7 @@ With no prefix argument, return the string."
 (setq web-mode-engines-alist '(("django" . "\.html")))
 
 (require 'markdown-mode)
+(add-hook 'markdown-mode-hook 'auto-fill-mode)
 
 ; Keybindings --------------------------------------------------------
 
