@@ -132,6 +132,7 @@ With no prefix argument, return the string."
   (setq show-trailing-whitespace nil))
 
 (add-hook 'org-mode-hook 'hide-trailing-whitespace-in-org-mode)
+(add-hook 'org-mode-hook 'auto-fill-mode)
 
 (setq org-capture-templates
       `(("t" "TODO" item (file ,(concat org-directory "/queue.org"))
