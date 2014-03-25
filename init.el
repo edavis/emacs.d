@@ -190,6 +190,7 @@ With no prefix argument, return the string."
 
 (require 'markdown-mode)
 (add-hook 'markdown-mode-hook 'auto-fill-mode)
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 
 ; Keybindings --------------------------------------------------------
 
