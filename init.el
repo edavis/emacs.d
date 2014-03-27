@@ -108,6 +108,13 @@ With no prefix argument, return the string."
   (let ((pw (shell-command-to-string "/usr/local/bin/pwgen 16 1")))
     (insert (replace-regexp-in-string "\n" "" pw))))
 
+(defun uuidgen (&optional arg)
+  (interactive "P")
+  (let ((uuid (replace-regexp-in-string "\n" "" (shell-command-to-string "uuidgen"))))
+    (if arg
+	(insert uuid)
+      uuid)))
+
 ; Hooks --------------------------------------------------------------
 
 (add-hook 'after-save-hook
