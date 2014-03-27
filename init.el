@@ -115,6 +115,15 @@ With no prefix argument, return the string."
 	(insert uuid)
       uuid)))
 
+(defun make-note ()
+  (interactive)
+  (let ((headline (org-element-at-point)))
+    (unless (org-get-property-block)
+      (org-insert-property-drawer)
+      (org-set-property "type" "note")
+      (org-set-property "url" nil)
+      (org-set-property "created" (rfc822)))))
+
 ; Hooks --------------------------------------------------------------
 
 (add-hook 'after-save-hook
