@@ -11,7 +11,7 @@
       python-indent-guess-indent-offset nil
       user-full-name "Eric Davis"
       user-mail-address "eric@davising.com"
-      opml-owner-id "https://twitter.com/ejd791"
+      opml-owner-id "http://ericdavis.org/"
       confirm-kill-emacs 'yes-or-no-p)
 
 (setq-default truncate-lines t
