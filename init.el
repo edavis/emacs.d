@@ -143,6 +143,8 @@ With no prefix argument, return the string."
       org-startup-indented t)
 
 (define-key global-map "\C-cc" 'org-capture)
+(define-key org-mode-map "\M-n" 'outline-next-visible-heading)
+(define-key org-mode-map "\M-p" 'outline-previous-visible-heading)
 
 (defun hide-trailing-whitespace-in-org-mode ()
   (setq show-trailing-whitespace nil))
