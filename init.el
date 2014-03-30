@@ -14,6 +14,8 @@
       opml-owner-id "http://ericdavis.org/"
       confirm-kill-emacs 'yes-or-no-p)
 
+(setenv "PATH" (format "%s:/usr/local/bin" (getenv "PATH")))
+
 (setq-default truncate-lines t
 	      show-trailing-whitespace t
 	      opml-sync nil)
