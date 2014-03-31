@@ -214,14 +214,15 @@ With no prefix argument, return the string."
 
 ; Keybindings --------------------------------------------------------
 
-(global-set-key (kbd "\C-x SPC") 'just-one-space)
+(global-set-key (kbd "C-x SPC") 'just-one-space)
 (global-set-key (kbd "M-+") 'text-scale-increase)
 (global-set-key (kbd "M--") 'text-scale-decrease)
 (global-set-key (kbd "RET") 'newline-and-indent)
-(global-set-key (kbd "\C-c \C-x r") 'replace-string)
-(global-set-key (kbd "\C-x m") 'magit-status)
-(global-set-key "\C-\M-e" 'eval-defun)
-(global-set-key (kbd "\C-x t") 'timestamp)
+(global-set-key (kbd "C-c C-x r") 'replace-string)
+(global-set-key (kbd "C-x m") 'magit-status)
+(global-set-key (kbd "C-M-e") 'eval-defun)
+(global-set-key (kbd "C-x t") 'timestamp)
+(global-set-key (kbd "C-c r") 'recompile)
 
 ; Custom -------------------------------------------------------------
 
