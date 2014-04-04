@@ -178,19 +178,6 @@ With no prefix argument, return the string."
 			       (downcase (car split))
 			       (mapconcat #'capitalize (cdr split) "")))))
 
-(defun new-post (title)
-  "Insert the boilerplate of a new blog post."
-  (interactive "sTitle? ")
-  (insert title)
-  (unless (org-get-property-block)
-    (org-insert-property-drawer)
-    (org-set-property "created" (rfc822))
-    (org-set-property "type" "outline")
-    (org-set-property "name" (camel-case title))
-    (org-set-property "path" (format "%s/%s.html"
-				     (format-time-string "%Y/%m/%d")
-				     (camel-case title)))))
-
 ;; Installed from Homebrew
 (require 'magit)
 
