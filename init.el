@@ -148,10 +148,10 @@ With no prefix argument, return the string."
 (define-key org-mode-map "\M-n" 'outline-next-visible-heading)
 (define-key org-mode-map "\M-p" 'outline-previous-visible-heading)
 
-(defun hide-trailing-whitespace-in-org-mode ()
+(defun hide-trailing-whitespace ()
   (setq show-trailing-whitespace nil))
 
-(add-hook 'org-mode-hook 'hide-trailing-whitespace-in-org-mode)
+(add-hook 'org-mode-hook 'hide-trailing-whitespace)
 (add-hook 'org-mode-hook 'auto-fill-mode)
 
 (setq org-capture-templates
