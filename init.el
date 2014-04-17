@@ -149,6 +149,16 @@ With no prefix argument, return the string."
 (define-key org-mode-map "\M-n" 'outline-next-visible-heading)
 (define-key org-mode-map "\M-p" 'outline-previous-visible-heading)
 
+(require 'ox-html)
+
+(setq org-publish-project-alist '(("ericdavis.org"
+				   :base-directory "~/Dropbox/Org/ericdavis.org/"
+				   :publishing-directory "/tmp/html/ericdavis.org/"
+				   :publishing-function (org-html-publish-to-html org-publish-attachment)
+				   :recursive t
+				   :html-doctype "html5"
+				   :html-html5-fancy t)))
+
 (defun hide-trailing-whitespace ()
   (setq show-trailing-whitespace nil))
 
