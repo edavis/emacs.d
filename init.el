@@ -13,6 +13,8 @@
       user-mail-address "eric@davising.com"
       opml-owner-id "http://ericdavis.org/"
       show-trailing-whitespace t
+      delete-by-moving-to-trash t
+      trash-directory "~/.emacs-trash"
       confirm-kill-emacs 'yes-or-no-p)
 
 (setenv "PATH" (format "%s:/usr/local/bin" (getenv "PATH")))
