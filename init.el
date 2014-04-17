@@ -140,7 +140,7 @@ With no prefix argument, return the string."
 ;; Org Mode
 (setq org-directory "~/Dropbox/Org"
       org-default-notes-file (concat org-directory "/notes.org")
-      org-blank-before-new-entry '((heading . nil) (plain-list-item . nil))
+      org-blank-before-new-entry '((heading . auto) (plain-list-item . nil))
       org-startup-indented t)
 
 (define-key global-map "\C-cc" 'org-capture)
