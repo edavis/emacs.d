@@ -156,8 +156,13 @@ With no prefix argument, return the string."
 				   :publishing-directory "/tmp/html/ericdavis.org/"
 				   :publishing-function (org-html-publish-to-html org-publish-attachment)
 				   :recursive t
+				   :with-toc nil
 				   :html-doctype "html5"
-				   :html-html5-fancy t)))
+				   :html-html5-fancy t
+				   :html-head-include-scripts nil
+				   :html-head-include-default-style nil
+				   :html-preamble nil
+				   :html-postamble nil)))
 
 (defun hide-trailing-whitespace ()
   (setq show-trailing-whitespace nil))
