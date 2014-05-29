@@ -3,6 +3,7 @@
 (source gnu)
 (source melpa)
 
+(depends-on "markdown-mode")
 
 (depends-on "bind-key")
 (depends-on "cask")
