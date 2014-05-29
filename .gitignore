@@ -2,3 +2,4 @@
 auto-save-list/
 lib/org*
 !lib/org-opml.el
+.cask
